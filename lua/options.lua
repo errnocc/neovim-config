@@ -22,3 +22,6 @@ vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 vim.o.clipboard = "unnamedplus"
+
+-- vim.opt.dictionary = "/home/lian/.local/dict/american_english.di"
+-- vim.opt.complete:append { "k" }

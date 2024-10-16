@@ -51,4 +51,5 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 -- debug lsp
 -- vim.lsp.set_log_level("trace")
-vim.lsp.set_log_level("off") 
+vim.lsp.set_log_level "off"
+
