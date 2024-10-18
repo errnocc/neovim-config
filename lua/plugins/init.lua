@@ -57,13 +57,6 @@ return {
     config = function()
       require("ufo").setup()
     end,
-    {
-      "neovim/nvim-lspconfig",
-      config = function()
-        require("nvchad.configs.lspconfig").defaults()
-        require "configs.lspconfig"
-      end,
-    },
   },
   {
     "keaising/im-select.nvim",

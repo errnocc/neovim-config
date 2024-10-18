@@ -23,5 +23,21 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 vim.o.clipboard = "unnamedplus"
 
+-- config neovide
+if vim.g.neovide then
+  vim.o.guifont = "CaskaydiaCove NF:h14" -- text below applies for VimScript
+  vim.g.neovide_transparency = 1.0
+  vim.g.neovide_refresh_rate = 144
+  vim.g.neovide_remember_window_size = true
+  vim.g.neovide_cursor_vfx_mode = "pixiedust"
+  vim.g.neovide_scroll_animation_length = 0.3
+  vim.g.neovide_cursor_antialiasing = true
+end
+-- replace tab wide = 4
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+-- debug lsp
+-- vim.lsp.set_log_level("trace")
+vim.lsp.set_log_level "off"
 -- vim.opt.dictionary = "/home/lian/.local/dict/american_english.di"
 -- vim.opt.complete:append { "k" }
