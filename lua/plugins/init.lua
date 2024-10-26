@@ -31,24 +31,24 @@ return {
       },
     },
   },
-  {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", -- optional
-      "nvim-tree/nvim-web-devicons", -- optional
-    },
-  },
-  {
-    "p00f/clangd_extensions.nvim",
-    lazy = true,
-    ft = { "cpp", "c", "h", "hpp" },
-    dependencies = { "neovim/nvim-lspconfig" },
-    config = function()
-      require "configs.extension"
-    end,
-  },
-
+  -- {
+  --   "nvimdev/lspsaga.nvim",
+  --   event = "LspAttach",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter", -- optional
+  --     "nvim-tree/nvim-web-devicons", -- optional
+  --   },
+  -- },
+  -- {
+  --   "p00f/clangd_extensions.nvim",
+  --   lazy = true,
+  --   ft = { "cpp", "c", "h", "hpp" },
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  --   config = function()
+  --     require "configs.extension"
+  --   end,
+  -- },
+  --
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
