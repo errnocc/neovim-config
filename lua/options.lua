@@ -4,11 +4,6 @@ require "nvchad.options"
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
-
--- replace tab wide = 4
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   desc = "return cursor to where it was last time closing the file",
   pattern = "*",
@@ -20,7 +15,6 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
 vim.o.clipboard = "unnamedplus"
 
 -- config neovide
@@ -33,9 +27,14 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_cursor_antialiasing = true
 end
+
 -- replace tab wide = 4
-vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 -- debug lsp
 -- vim.lsp.set_log_level("trace")
 vim.lsp.set_log_level "off"

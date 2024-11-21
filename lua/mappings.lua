@@ -5,12 +5,15 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<leader>sw", ":ClangdSwitchSourceHeader<CR>", { desc = "Switch Source and Header" })
+map("n", "<leader>sw", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch Source and Header" })
 map("i", "jk", "<ESC>")
 map("n", "<leader>ej", vim.diagnostic.goto_next, { desc = "Goto next diagnostic" })
 map("n", "<leader>ek", vim.diagnostic.goto_prev, { desc = "Goto next diagnostic" })
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map("n", "<leader>eo", vim.diagnostic.open_float, { desc = "Open current diagnostic" })
+map("n", "<leader>es", vim.diagnostic.setloclist, { desc = "Open diagnostic list" })
+map("n", "<leader>ed", "<cmd>Telescope diagnostics<CR>", { desc = "Open diagnostic list" })
 
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 local pantran = require "pantran"
 local opts = { noremap = true, silent = true, expr = true }
 map("n", "<leader>tr", pantran.motion_translate, opts)
@@ -21,3 +24,11 @@ map("x", "<leader>tr", pantran.motion_translate, opts)
 --setup mapping to call :LazyGit
 
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGIT" }, opts)
+
+local function change_root_to_global_cwd()
+  local api = require("nvim-tree.api")
+  local global_cwd = vim.fn.getcwd(-1, -1)
+  api.tree.change_root(global_cwd)
+end
+
+map('n', '<leader>tn', change_root_to_global_cwd, { desc = 'Change Root To Global CWD' })
