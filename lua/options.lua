@@ -40,3 +40,7 @@ vim.opt.expandtab = true
 vim.lsp.set_log_level "off"
 -- vim.opt.dictionary = "/home/lian/.local/dict/american_english.di"
 -- vim.opt.complete:append { "k" }
+
+vim.opt.number = false
+
+require('telescope').load_extension('projects')

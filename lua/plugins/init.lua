@@ -162,4 +162,120 @@ return {
       require("telescope").load_extension "lazygit"
     end,
   },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- Manual mode doesn't automatically change your root directory, so you have
+        -- the option to manually do so using `:ProjectRoot` command.
+        manual_mode = false,
+
+        -- Methods of detecting the root directory. **"lsp"** uses the native neovim
+        -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
+        -- order matters: if one is not detected, the other is used as fallback. You
+        -- can also delete or rearangne the detection methods.
+        detection_methods = { "lsp", "pattern" },
+
+        -- All the patterns used to detect root dir, when **"pattern"** is in
+        -- detection_methods
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+
+        -- Table of lsp clients to ignore by name
+        -- eg: { "efm", ... }
+        ignore_lsp = { "clangd" },
+
+        -- Don't calculate root dir on specific directories
+        -- Ex: { "~/.cargo/*", ... }
+        exclude_dirs = {},
+
+        -- Show hidden files in telescope
+        show_hidden = false,
+
+        -- When set to false, you will get a message when project.nvim changes your
+        -- directory.
+        silent_chdir = true,
+
+        -- What scope to change the directory, valid options are
+        -- * global (default)
+        -- * tab
+        -- * win
+        scope_chdir = "global",
+
+        -- Path where project.nvim will store the project history for use in
+        -- telescope
+        datapath = vim.fn.stdpath "data",
+      }
+    end,
+  },
+  {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  -- {
+  --   "frankroeder/parrot.nvim",
+  --   dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("parrot").setup {
+  --       -- Providers must be explicitly added to make them available.
+  --       providers = {
+  --         anthropic = {
+  --           api_key = os.getenv "ANTHROPIC_API_KEY",
+  --         },
+  --         gemini = {
+  --           api_key = os.getenv "GEMINI_API_KEY",
+  --         },
+  --         groq =
+  --           api_key = os.getenv "GROQ_API_KEY",
+  --         },
+  --         mistral = {
+  --           api_key = os.getenv "MISTRAL_API_KEY",
+  --         },
+  --         pplx = {
+  --           api_key = os.getenv "PERPLEXITY_API_KEY",
+  --         },
+  --         -- provide an empty list to make provider available (no API key required)
+  --         ollama = {},
+  --         openai = {
+  --           api_key = os.getenv "OPENAI_API_KEY",
+  --         },
+  --         github = {
+  --           api_key = os.getenv "GITHUB_TOKEN",
+  --         },
+  --         nvidia = {
+  --           api_key = os.getenv "NVIDIA_API_KEY",
+  --         },
+  --         xai = {
+  --           api_key = os.getenv "XAI_API_KEY",
+  --         },
+  --       },
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   "zapling/mason-conform.nvim",
+  --   dependencies = {
+  --     "williamboman/mason.nvim",
+  --     "stevearc/conform.nvim",
+  --   },
+  -- },
 }

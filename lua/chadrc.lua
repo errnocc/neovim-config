@@ -139,6 +139,7 @@ local options = {
       "cmake-language-server",
       -- sql
       "sqlls",
+      "sql-formatter",
       -- assermbly
       "asm-lsp",
       -- latex

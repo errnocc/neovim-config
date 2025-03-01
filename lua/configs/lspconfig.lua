@@ -33,10 +33,12 @@ local servers = {
   "pyright",
   "bashls",
   "sqlls",
-  "cmake",
+  "neocmake",
   "ltex",
   "racket_langserver",
-  "taplo",
+  -- "taplo",
+  "gopls",
+  -- "harper_ls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -49,23 +51,24 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  filetypes = { "rust" },
-  -- on_attach = function(client, bufnr)
-  --   vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-  -- end,
-  on_attach = on_attach,
-  settings = {
-    ["rust_analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = {
-        command = "clippy",
-      },
-    },
-  },
-}
+-- lspconfig.rust_analyzer.setup {
+--   filetypes = { "rust" },
+--   -- on_attach = function(client, bufnr)
+--   --   vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+--   -- end,
+--   on_attach = on_attach,
+--   settings = {
+--     ["rust_analyzer"] = {
+--       cargo = {
+--         allFeatures = true,
+--       },
+--       checkOnSave = {
+--         command = "clippy",
+--       },
+--     },
+--   },
+-- }
+--
 
 lspconfig.clangd.setup {
   -- on_attach = inlay,

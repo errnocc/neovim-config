@@ -1,8 +1,8 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    cpp = { "clangd" },
-    c = { "clangd" },
+    cpp = { "clang-format" },
+    c = { "clang-format" },
     rust = { "rustfmt" },
     css = { "prettier" },
     html = { "prettier" },
@@ -10,9 +10,10 @@ local options = {
     xml = { "prettier" },
     toml = { "prettier" },
     markdown = { "prettier" },
-    bash = { "prettier" },
+    bash = { "shfmt" },
     cmake = { "prettier" },
     typst = { "typstfmt" },
+    -- sql = { "sqlfmt" },
   },
 
   format_on_save = {

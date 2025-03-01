@@ -26,9 +26,21 @@ map("x", "<leader>tr", pantran.motion_translate, opts)
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGIT" }, opts)
 
 local function change_root_to_global_cwd()
-  local api = require("nvim-tree.api")
+  local api = require "nvim-tree.api"
   local global_cwd = vim.fn.getcwd(-1, -1)
   api.tree.change_root(global_cwd)
 end
 
-map('n', '<leader>tn', change_root_to_global_cwd, { desc = 'Change Root To Global CWD' })
+map("n", "<leader>tn", change_root_to_global_cwd, { desc = "Change Root To Global CWD" })
+
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format { async = true, lsp_format = "fallback", range = range }
+end, { range = true })
