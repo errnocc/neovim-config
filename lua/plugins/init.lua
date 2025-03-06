@@ -21,14 +21,19 @@ return {
         "vimdoc",
         "html",
         "css",
+        "c",
+        "cpp",
+        "cmake",
+        "comment",
+        "doxygen",
         "markdown",
         "xml",
         "bash",
         "ini",
         "json",
         "toml",
-        "cmake",
       },
+      auto_install = true,
     },
   },
   -- {
@@ -231,6 +236,26 @@ return {
       }
     end,
   },
+  {
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup {
+        enabled = true,
+        snippet_engine = "luasnip",
+      }
+    end,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
+  -- {
+  --   "folke/todo-comments.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  -- },
   -- {
   --   "frankroeder/parrot.nvim",
   --   dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
