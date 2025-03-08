@@ -43,4 +43,4 @@ vim.lsp.set_log_level "off"
 
 vim.opt.number = false
 
-require('telescope').load_extension('projects')
+require("telescope").load_extension "projects"
