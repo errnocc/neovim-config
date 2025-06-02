@@ -89,4 +89,17 @@ lspconfig.clangd.setup {
     -- fallbackFlags = { "--std=c++23" },
     -- fallbackFlags = { "--std=c11" },
   },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+}
+
+lspconfig.asm_lsp.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {
+    "asm",
+    "S",
+    "vmasm",
+  },
+  root_markers = { },
 }

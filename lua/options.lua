@@ -20,7 +20,7 @@ vim.o.clipboard = "unnamedplus"
 -- config neovide
 if vim.g.neovide then
   vim.o.guifont = "CaskaydiaCove NF:h14" -- text below applies for VimScript
-  vim.g.neovide_transparency = 1.0
+  vim.g.neovide_opacity = 1.0
   vim.g.neovide_refresh_rate = 144
   vim.g.neovide_remember_window_size = true
   vim.g.neovide_cursor_vfx_mode = "pixiedust"

@@ -25,6 +25,8 @@ map("x", "<leader>tr", pantran.motion_translate, opts)
 
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGIT" }, opts)
 
+map("n", "<leader>fs", ":Telescope lsp_workspace_symbols<CR>", { desc = "Find symbol" }, opts)
+
 local function change_root_to_global_cwd()
   local api = require "nvim-tree.api"
   local global_cwd = vim.fn.getcwd(-1, -1)
@@ -99,3 +101,10 @@ cmp.setup {
 
   -- ... Your other configuration ...
 }
+
+-- LSP configure
+-- map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Lsp code action" }, opts)
+-- map("n", "<leader>gr", vim.lsp.buf.references, { desc = "Lsp all references" }, opts)
+-- map("n", "<leader>gd", vim.lsp.buf.type_definition, { desc = "Lsp type definition" }, opts)
+-- map("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Lsp function implementation" }, opts)
+-- map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Lsp symbol rename" }, opts)

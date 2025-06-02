@@ -6,7 +6,7 @@
 local options = {
 
   base46 = {
-    theme = "everforest", -- default theme
+    theme = "catppuccin", -- default theme
     hl_add = {},
     hl_override = {
       Comment = { italic = true },
@@ -15,7 +15,7 @@ local options = {
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "everforest", "everforest_light" },
+    theme_toggle = { "catppuccin", "everforest_light" },
 
     statusline = {
       theme = "vscode_colored",
@@ -67,12 +67,12 @@ local options = {
     },
 
     buttons = {
-      { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
+      { txt = "󰈙  Find File", keys = "ff", cmd = "Telescope find_files" },
+      { txt = "  Find Projects", keys = "fp", cmd = "Telescope projects"},
       { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
       { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
       { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
       { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
-
       { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
 
       {
