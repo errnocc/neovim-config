@@ -36,6 +36,9 @@ return {
       auto_install = true,
     },
   },
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
   -- {
   --   "nvimdev/lspsaga.nvim",
   --   event = "LspAttach",
