@@ -10,6 +10,8 @@ local servers = {
   "neocmake",
   "ltex",
   "racket_langserver",
+  "clangd",
+  "asm_ls",
   -- "taplo",
   "gopls",
   -- "harper_ls",
