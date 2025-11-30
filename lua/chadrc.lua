@@ -6,7 +6,7 @@
 local options = {
 
   base46 = {
-    theme = "everforest", -- default theme
+    theme = "onenord", -- default theme
     hl_add = {},
     hl_override = {
       Comment = { italic = true },
@@ -15,7 +15,7 @@ local options = {
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "everforest", "everforest_light" },
+    theme_toggle = { "onenord", "everforest_light" },
 
     statusline = {
       theme = "vscode_colored",

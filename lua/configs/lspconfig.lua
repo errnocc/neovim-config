@@ -51,12 +51,16 @@ nvlsp.clangd = {
     "--completion-style=bundled",
     "--fallback-style=Microsoft",
     "--all-scopes-completion",
+    "--malloc-trim",
+    "--background-index",
+    "--pch-storage=memory",
+    "-j20",
   },
   init_options = {
     -- fallbackFlags = { "--std=c++23" },
     -- fallbackFlags = { "--std=c11" },
   },
-  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "asm" },
 }
 
 nvlsp.asm_lsp = {
