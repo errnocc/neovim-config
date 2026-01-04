@@ -47,21 +47,21 @@ return {
   --     "nvim-tree/nvim-web-devicons", -- optional
   --   },
   -- },
-  -- {
-  --   "p00f/clangd_extensions.nvim",
-  --   lazy = true,
-  --   ft = { "cpp", "c", "h", "hpp" },
-  --   dependencies = { "neovim/nvim-lspconfig" },
-  --   config = function()
-  --     require "configs.extension"
-  --   end,
-  -- },
   --
+  {
+    "p00f/clangd_extensions.nvim",
+    lazy = true,
+    ft = { "cpp", "c", "h", "hpp" },
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require "configs.extension"
+    end,
+  },
+
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
-      "kevinhwang91/promise-async",
-    },
+      "kevinhwang91/promise-async", },
     config = function()
       require("ufo").setup()
     end,

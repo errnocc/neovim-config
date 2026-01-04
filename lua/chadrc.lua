@@ -144,8 +144,6 @@ local options = {
       "asm-lsp",
       -- latex
       "ltex-ls",
-      -- typst
-      "typst-lsp",
 
       -- front end
       "html-lsp",

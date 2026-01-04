@@ -19,6 +19,7 @@ vim.o.clipboard = "unnamedplus"
 
 -- config neovide
 if vim.g.neovide then
+  -- vim.o.guifont = "FiraCode Nerd Font Mono:h14" -- text below applies for VimScript
   vim.o.guifont = "CaskaydiaCove NF:h14" -- text below applies for VimScript
   vim.g.neovide_opacity = 1.0
   vim.g.neovide_refresh_rate = 144
@@ -28,11 +29,11 @@ if vim.g.neovide then
   vim.g.neovide_cursor_antialiasing = true
 end
 
--- replace tab wide = 4
+-- replace tab wide = 8
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 8
 vim.opt.expandtab = true
 
 -- debug lsp
