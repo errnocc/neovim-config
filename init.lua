@@ -23,6 +23,12 @@ require("lazy").setup({
   },
 
   { import = "plugins" },
+
+  { import = "nvchad.blink.lazyspec" },
+  {
+    "Saghen/blink.cmp",
+    opts = require "configs.blink",
+  },
 }, lazy_config)
 
 -- load theme
@@ -35,4 +41,3 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-

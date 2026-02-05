@@ -6,7 +6,7 @@
 local options = {
 
   base46 = {
-    theme = "onenord", -- default theme
+    theme = "everforest", -- default theme
     hl_add = {},
     hl_override = {
       Comment = { italic = true },
@@ -15,8 +15,8 @@ local options = {
     integrations = {},
     changed_themes = {},
     transparency = false,
-    theme_toggle = { "onenord", "everforest_light" },
-
+    theme_toggle = { "everforest", "everforest_light" },
+    term = true,
     statusline = {
       theme = "vscode_colored",
     },
@@ -68,7 +68,7 @@ local options = {
 
     buttons = {
       { txt = "󰈙  Find File", keys = "ff", cmd = "Telescope find_files" },
-      { txt = "  Find Projects", keys = "fp", cmd = "Telescope projects"},
+      { txt = "  Find Projects", keys = "fp", cmd = "Telescope projects" },
       { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
       { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
       { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },

@@ -23,6 +23,7 @@ local servers = {
       "--malloc-trim",
       "--background-index",
       "--pch-storage=memory",
+      -- "-j 20"
     },
     init_options = {
       -- fallbackFlags = { "--std=c++23" },

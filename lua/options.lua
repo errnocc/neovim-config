@@ -32,8 +32,8 @@ end
 -- replace tab wide = 8
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.tabstop = 8
-vim.opt.shiftwidth = 8
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- debug lsp
@@ -41,7 +41,11 @@ vim.opt.expandtab = true
 vim.lsp.set_log_level "off"
 -- vim.opt.dictionary = "/home/lian/.local/dict/american_english.di"
 -- vim.opt.complete:append { "k" }
+--
+vim.opt.termguicolors = true
 
 vim.opt.number = false
+
+vim.opt.laststatus = 3
 
 require("telescope").load_extension "projects"
