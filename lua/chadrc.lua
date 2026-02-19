@@ -102,7 +102,9 @@ local options = {
     },
   },
 
-  lsp = { signature = true },
+  lsp = { 
+      signature = true,
+  },
 
   cheatsheet = {
     theme = "grid", -- simple/grid
