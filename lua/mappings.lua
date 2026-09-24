@@ -7,10 +7,10 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>sw", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch Source and Header" })
 map("i", "jk", "<ESC>")
-map("n", "<leader>ej", function()
+map("n", "<leader>qj", function()
   vim.diagnostic.jump { count = 1, float = true }
 end, { desc = "Goto next diagnostic" })
-map("n", "<leader>ek", function()
+map("n", "<leader>qk", function()
   vim.diagnostic.jump { count = -1, float = true }
 end, { desc = "Goto next diagnostic" })
 
@@ -115,3 +115,4 @@ map("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Lsp function implem
 map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Lsp symbol rename" })
 
 map("n", "<leader>tp", "<cmd>Telescope projects<CR>", { desc = "Telescope projects" })
+map("n", "<leader>jw", "<cmd>Telescope grep_string<CR>", { desc = "Telescope grep_string" })

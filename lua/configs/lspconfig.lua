@@ -5,11 +5,22 @@ local servers = {
   lua_ls = {},
   json_ls = {},
   lemminx = {},
-  pyright = {},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          useLibraryCodeForTypes = true,
+          diagnosticMode = "workspace",
+        },
+      },
+    },
+  },
   bashls = {},
   sqlls = {},
   neocmake = {},
   ltex = {},
+--[[
   clangd = {
     cmd = {
       "clangd",
@@ -31,6 +42,7 @@ local servers = {
     },
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "asm" },
   },
+]]
   asm_lsp = {
     filetypes = {
       "asm",
@@ -54,6 +66,34 @@ local servers = {
           command = "clippy",
         },
       },
+    },
+  },
+
+  clice = {
+    filetypes = { "c", "cpp" },
+
+    root_markers = {
+      ".git/",
+      "clice.toml",
+      ".clang-tidy",
+      ".clang-format",
+      "compile_commands.json",
+      "compile_flags.txt",
+      "configure.ac", -- AutoTools
+    },
+
+    capabilities = {
+      textDocument = {
+        completion = {
+          editsNearCursor = true,
+        },
+      },
+      offsetEncoding = { "utf-8" },
+    },
+
+    cmd = {
+      "clice",
+      "serve",
     },
   },
 }
