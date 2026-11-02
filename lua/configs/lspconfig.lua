@@ -20,7 +20,6 @@ local servers = {
   sqlls = {},
   neocmake = {},
   ltex = {},
---[[
   clangd = {
     cmd = {
       "clangd",
@@ -42,7 +41,6 @@ local servers = {
     },
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "asm" },
   },
-]]
   asm_lsp = {
     filetypes = {
       "asm",
@@ -69,6 +67,7 @@ local servers = {
     },
   },
 
+--[[
   clice = {
     filetypes = { "c", "cpp" },
 
@@ -96,6 +95,7 @@ local servers = {
       "serve",
     },
   },
+]]
 }
 
 for name, opts in pairs(servers) do
